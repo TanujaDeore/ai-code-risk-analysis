@@ -1,0 +1,16 @@
+# Secrets -- never commit this
+.env
+
+# Virtual environment
+venv/
+
+# Large cloned reference repos -- not our own code, regenerate via README instructions
+openfrontio/
+requests_repo/
+
+# Generated databases -- regenerate by running the pipeline scripts
+*.db
+
+# Python cache
+__pycache__/
+*.pyc
