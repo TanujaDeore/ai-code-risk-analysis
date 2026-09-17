@@ -22,7 +22,9 @@ Mines real commit history from the `requests` Python library, uses the SZZ algor
 ### 2. A real AI-vs-human comparison, with a live reporting bot (`OpenFrontIO`)
 The more direct answer to the original question. Real AI coding tools (Claude Code, GitHub Copilot, etc.) leave genuine, literal markers in commit history (`Co-Authored-By: Claude`, `Generated with Claude Code`, etc.) — this project mines a real, popular open-source project ([OpenFrontIO](https://github.com/openfrontio/OpenFrontIO), 2,600+ stars) for commits carrying these real markers, and statistically compares them against human-written commits on complexity, size, and real static-analysis security findings.
 
-A GitHub Action bot then uses this real baseline to automatically report, on any new pull request, whether the change is AI-assisted, and how its complexity and security profile compares to real historical patterns — with a live, working example captured in this repo (see `docs/bot-example.png`).
+A GitHub Action bot then uses this real baseline to automatically report, on any new pull request, whether the change is AI-assisted, and how its complexity and security profile compares to real historical patterns.
+
+![Bot comment example](docs/bot-example.png)
 
 ## The real finding
 
@@ -36,6 +38,7 @@ Comparing 317 real AI-assisted commits against a sample of human commits in Open
 | Medium-severity security findings (mean) | 0.24 | 0.04 | Yes (p = 0.0003) |
 
 AI-assisted commits in this real project are substantially larger, more complex, and carry more real static-analysis findings than human-written commits — a measured, statistically significant result, not a repeated industry statistic.
+![AI vs human comparison chart](docs/ai_vs_human_chart.png)
 
 **Honest caveat:** this shows correlation, not proof of causation. It's equally plausible that developers reach for AI specifically on larger, more sweeping changes, rather than AI inherently writing worse code for equivalent tasks. Both are consistent with the data; distinguishing them is a natural next step (e.g. normalizing findings per line changed).
 
